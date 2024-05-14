@@ -3,21 +3,23 @@ import { BarLoader, BounceLoader, ClipLoader, PacmanLoader, PulseLoader } from '
 
 const override: CSSProperties = {
     position: "fixed",
-    top: "47%",
-    left: "47%",
     borderColor: "rgb(234 179 8)",
     color: "rgb(234 179 8)",
+    left: "47%",
+    top: "45%",
 }
 
 const Loader = () => {
     return (
-        <ClipLoader
-            loading={true}
-            cssOverride={override}
-            size={100}
-            aria-label='Loading Spinner'
-            data-testid="loader"
-        />
+        <div className='fixed h-screen w-screen z-50 bg-white'>
+            <ClipLoader
+                loading={true}
+                cssOverride={override}
+                size={100}
+                aria-label='Loading Spinner'
+                data-testid="loader"
+            />
+        </div>
     )
 }
 

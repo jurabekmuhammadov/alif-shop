@@ -33,14 +33,14 @@ export function CarouselPlugin() {
     return (
         <Carousel
             plugins={[plugin.current]}
-            className="w-full h-96 rounded-lg"
+            className="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
-            <CarouselContent className="w-full h-96 rounded-lg">
+            <CarouselContent className="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg">
                 {images.map((img, index) => (
-                    <CarouselItem key={index} className="w-full h-96 rounded-lg">
-                        <div className="w-full h-96 rounded-lg">
+                    <CarouselItem key={index} className="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg">
+                        <div className="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg">
                             <Card className="border-none rounded-lg">
                                 <CardContent className="h-full w-full p-0 rounded-lg">
                                     <Image src={img} alt="image" width={1000} height={500} className="w-full h-full object-cover rounded-lg" />

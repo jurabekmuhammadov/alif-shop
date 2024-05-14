@@ -19,7 +19,7 @@ const categories = [
         href: "/"
     },
     {
-        name: "Uy uchun texnika",
+        name: "Uy va o'yin uchun texnika",
         href: "/"
     },
     {
@@ -33,22 +33,24 @@ const categories = [
     {
         name: "Aqlli uy",
         href: "/"
-    }
+    },
 ]
 
 const CategoriesBar = () => {
     return (
-        <div>
-            <div>
+        <div className='mt-1 my-4 flex items-center gap-2'>
+            <ul className='w-full flex items-center gap-4 overflow-x-scroll overflow-y-hidden whitespace-nowrap py-2'>
                 {categories.map((ctg, i) => (
-                    <Link key={i} href={ctg.href}>
-                        <span>{ctg.name}</span>
-                    </Link>
+                    <li key={i} className=''>
+                        <Link href={ctg.href} className='pb-2 text-gray-400 font-semibold text-sm hover:border-b-2 hover:border-gray-900 hover:text-gray-900 transition'>
+                            {ctg.name}
+                        </Link>
+                    </li>
                 ))}
-            </div>
-            <button type='button'>
-                <ChevronDownIcon />
-                <span>Yana</span>
+            </ul>
+            <button type='button' className='flex items-center gap-1'>
+                <ChevronDownIcon size={20} />
+                <span className='text-sm md:text-base text-gray-900 font-semibold'>Yana</span>
             </button>
         </div>
     )
