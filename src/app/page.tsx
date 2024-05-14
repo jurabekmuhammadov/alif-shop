@@ -1,7 +1,13 @@
-import Image from "next/image";
+import CategoriesBar from "@/components/categories-bar";
+import Products from "./products/page";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <h1>hello</h1>
+    <>
+      <CategoriesBar />
+      {/* <Products /> */}
+      <Hero />
+    </>
   );
 }

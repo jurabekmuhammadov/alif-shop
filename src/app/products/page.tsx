@@ -14,11 +14,16 @@ const Products = () => {
         <div>
             {loading && <Loader />}
             {error && <div>{error}</div>}
-            {products?.length > 0 ? <div>
-                {products.map((pr, i) => (
-                    <ProductCard key={i} product={pr} />
-                ))}
-            </div> : <div>No products</div>}
+            {products?.length > 0 ? (
+                <div>
+                    {products.map((pr, i) => (
+                        <ProductCard key={i} product={pr} />
+                    ))}
+                </div>
+            ) : (
+                !loading && <div className='bg-yellow-500'>No Products</div>
+            )
+            }
         </div>
     )
 }

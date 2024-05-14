@@ -1,16 +1,17 @@
 import React, { CSSProperties } from 'react'
-import { ClipLoader } from 'react-spinners'
+import { BarLoader, BounceLoader, ClipLoader, PacmanLoader, PulseLoader } from 'react-spinners'
 
 const override: CSSProperties = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red"
+    position: "fixed",
+    top: "47%",
+    left: "47%",
+    borderColor: "rgb(234 179 8)",
+    color: "rgb(234 179 8)",
 }
 
 const Loader = () => {
     return (
         <ClipLoader
-            color="white"
             loading={true}
             cssOverride={override}
             size={100}

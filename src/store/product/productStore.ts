@@ -3,12 +3,9 @@ import { create } from "zustand"
 
 const productStore = (set: any) => ({
     products: [],
-    loading: false,
+    loading: true,
     error: null,
     fetchProducts: async () => {
-        set(() => ({
-            loading: true,
-        }));
         try {
             const res = await axios.get("https://dummyjson.com/products")
             const data = await res.data;
