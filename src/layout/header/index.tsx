@@ -5,7 +5,7 @@ import { Heart, Menu, Search, ShoppingCart } from 'lucide-react'
 
 const Header = () => {
   return (
-    <header className='flex flex-row-reverse md:flex-row justify-between items-center gap-3 py-4'>
+    <header className='flex flex-row-reverse md:flex-row justify-between items-center gap-3 py-4 px-5' style={{ maxWidth: 1320, margin: "0 auto"}}>
       <Link href="#" className='hidden w-28 h-8 md:flex items-center justify-center'>
         <Image src="/alif-logo.png" alt="logo" width={115} height={32} />
       </Link>

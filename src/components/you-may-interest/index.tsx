@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from '../product-card'
 import Link from 'next/link'
 import { ChevronRightIcon } from 'lucide-react'
+import Image from 'next/image'
 
 const YouMayInterest = () => {
     const { loading, products, error, fetchProducts } = useProductStore()
@@ -14,7 +15,7 @@ const YouMayInterest = () => {
         fetchProducts()
     }, [])
     return (
-        <div className='mt-8 mb-60 flex flex-col items-start'>
+        <div className='mt-8 flex flex-col items-start'>
             <div className='mb-4 flex items-center justify-between md:justify-start md:gap-5 w-full'>
                 <h1 className='text-xl font-semibold text-gray-900 md:text-2xl lg:text-3xl'>Sizni qiziqtirishi mumkin</h1>
                 <Link href={"/"} className='flex items-center text-sm font-semibold hover:underline text-blue-500 md:text-lg'>
@@ -34,6 +35,20 @@ const YouMayInterest = () => {
             )
             }
             <button className='mt-4 mx-auto px-10 py-2 bg-yellow-500 bg-opacity-50 rounded-lg transition hover:bg-opacity-80 text-sm md:text-base' onClick={() => setShowMore(!showMore)}>{showMore ? "Kamroq ko'rsatish" : "Ko'proq ko'rsatish"}</button>
+            <div className='grid grid-cols-2 gap-2 md:flex md:items-center md:justify-between md:gap-2 mt-6 lg:gap-4 overflow-x-auto overflow-y-hidden whitespace-nowrap'>
+                <div className='flex items-center justify-center'>
+                    <Image src={"/banner-1.png"} alt='product image' width={300} height={200} className='rounded-lg w-full h-full' />
+                </div>
+                <div className='flex items-center justify-center'>
+                    <Image src={"/banner-2.png"} alt='product image' width={300} height={200} className='rounded-lg w-full h-full' />
+                </div>
+                <div className='flex items-center justify-center'>
+                    <Image src={"/banner-3.png"} alt='product image' width={300} height={200} className='rounded-lg w-full h-full' />
+                </div>
+                <div className='flex items-center justify-center'>
+                    <Image src={"/banner-4.png"} alt='product image' width={300} height={200} className='rounded-lg w-full h-full' />
+                </div>
+            </div>
         </div>
     )
 }
