@@ -1,4 +1,5 @@
 "use client"
+import AppSection from "@/components/app";
 import CategoriesBar from "@/components/categories-bar";
 import Discounts from "@/components/discounts";
 import Hero from "@/components/hero";
@@ -18,6 +19,7 @@ export default function Home() {
       <SummerIsComming />
       <SeasonIsComing />
       <NewFromInfinix />
+      <AppSection />
     </>
   );
 }
