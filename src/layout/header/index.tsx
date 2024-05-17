@@ -2,11 +2,17 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import { Heart, Menu, Search, ShoppingCart } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import useCartStore from '@/store/cart/cartStore'
+import useFavoriteStore from '@/store/favorites/favoriteStore'
 
 const Header = () => {
+  const { cart } = useCartStore();
+  const { favorites } = useFavoriteStore();
+
   return (
-    <header className='flex flex-row-reverse md:flex-row justify-between items-center gap-3 py-4 px-5' style={{ maxWidth: 1320, margin: "0 auto"}}>
-      <Link href="#" className='hidden w-28 h-8 md:flex items-center justify-center'>
+    <header className='flex flex-row-reverse md:flex-row justify-between items-center gap-3 py-4 px-5' style={{ maxWidth: 1320, margin: "0 auto" }}>
+      <Link href="/" className='hidden w-28 h-8 md:flex items-center justify-center'>
         <Image src="/alif-logo.png" alt="logo" width={115} height={32} />
       </Link>
       <button type='button' className='hidden md:flex flex-row gap-2 items-center py-2 lg:py-2.5 px-3 rounded-lg bg-yellow-500'>
@@ -20,14 +26,20 @@ const Header = () => {
           <Search className='text-yellow-500 w-6' />{""}
         </button>
       </div>
-      <div className='hidden md:flex flex-col items-center'>
+      <Link href={"/cart"} className='hidden md:flex flex-col items-center relative'>
         <ShoppingCart />
         <span className='text-xs lg:text-sm'>Savat</span>
-      </div>
-      <div className='hidden md:flex flex-col items-center'>
+        {cart.length > 0 && (
+          <Badge variant="destructive" className='absolute py-0 px-1 text-semibold text-white -top-2 right-0'>{cart.length}</Badge>
+        )}
+      </Link>
+      <Link href={"/favorites"} className='hidden md:flex flex-col items-center relative'>
         <Heart />
         <span className='text-xs lg:text-sm'>Saralanganlar</span>
-      </div>
+        {favorites.length > 0 && (
+          <Badge variant="destructive" className='absolute py-0 px-1 text-semibold text-white -top-2 right-7'>{favorites.length}</Badge>
+        )}
+      </Link>
       <button type='button' className='hidden md:block py-2 px-4 border-yellow-400 border-2 rounded-lg font-semibold hover:bg-yellow-100 text-xs '>
         Kirish
       </button>
